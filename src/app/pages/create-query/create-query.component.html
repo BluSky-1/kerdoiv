@@ -1,0 +1,23 @@
+<p>create-query works!</p>
+
+<div class="formContainer">
+    <form [formGroup]="createQuery" (ngSubmit)="onSubmit()">
+        <label for="Query">Kérdés</label>
+        <input type="text" formControlName="question">
+        <br>
+        <label for="nanswers">Válaszok száma</label>
+        <input type="number" formControlName="nanswers">
+        <div >
+            <!--for nanswers  label for="answer[i]">i. válasz </label> <input type="text" formControlName="asnwer[i]"> -->
+        </div>
+
+        <br>
+        <label for="Public">Publikus</label>
+        <input type="checkbox" formControlName="public">
+        <br>
+        <label for="verified">Csak igazolt felhsználók</label>
+        <input type="checkbox" formControlName="verified">
+        <br>
+        <button type="submit">ADD</button><br>
+    </form>
+</div>

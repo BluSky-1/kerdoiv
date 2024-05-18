@@ -1,0 +1,28 @@
+a {
+    text-decoration: none;
+    color: white;
+
+}
+
+a:hover{
+    color: lightgray;
+}
+
+a:active{
+    color: gray;
+}
+
+.head {
+    list-style: none;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    border: solid 3px yellow; /* for debugging purposes */
+  }

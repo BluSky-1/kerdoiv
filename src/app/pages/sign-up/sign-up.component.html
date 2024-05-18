@@ -1,0 +1,19 @@
+<p>sign-up works!</p>
+<div class="formContainer">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <label for="username">Felhasználónév</label>
+        <input type="text" formControlName="userName">
+        <br>
+        <label for="email">Email</label>
+        <input type="email" formControlName="email">
+        <br>
+        <label for="password">Jelszó</label>
+        <input type="password" formControlName="password">
+        <br>
+        <label for="password">Jelszó újra</label>
+        <input type="password" formControlName="rePassword">
+        <br>
+        <button type="submit">Regisztrálás</button><br>
+        <button [routerLink]="'/log-in'">Bejelntkezés</button>
+    </form>
+</div>
