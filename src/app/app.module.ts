@@ -18,6 +18,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { environment } from '../enviroments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -39,12 +47,22 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatIconModule,
     FlexLayoutModule,
-    MatListModule
+    MatListModule,
+    AngularFireModule.initializeApp(environment.firebase)
+
 
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideFirebaseApp(() => initializeApp({"projectId":"webfeljker","appId":"1:48153889494:web:14898f98dd48a0a3e41777","storageBucket":"webfeljker.appspot.com","apiKey":"AIzaSyBZ1nFxzw1t7UOgEnq-nl1TqqSkr-FDZ0g","authDomain":"webfeljker.firebaseapp.com","messagingSenderId":"48153889494"})),
+    provideAuth(() => getAuth()),
+    provideAnalytics(() => getAnalytics()),
+    ScreenTrackingService,
+    UserTrackingService,
+    provideFirestore(() => getFirestore()),
+    provideDatabase(() => getDatabase()),
+    provideStorage(() => getStorage())
   ],
   bootstrap: [AppComponent]
 })
