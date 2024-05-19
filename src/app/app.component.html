@@ -1,34 +1,29 @@
 
-<mat-sidenav-container>
+<mat-sidenav-container class="container">
     <mat-sidenav #sidenav>
-      <app-header></app-header>
+        <app-header></app-header>
     </mat-sidenav>
     <mat-sidenav-content>
-
-        <mat-toolbar color="primary">
-            <div fxHide.gt-xs>
-                <button mat-icon-button (click)="onTogglesSidenav(sidenav)">
-                    <mat-icon>menu</mat-icon>
-                </button>
-            </div>
-            <div>Kérdésbank</div>
-            <div fcFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-                <ul class="head" fcFlex fxLayout fxLayoutGap="10px">
-                    <li><a routerLink="/main">Főoldal</a></li>
-                    <li><a routerLink="/all-query">Összes kérdőív</a></li>
-                    <li><a routerLink="/create-query">Kérdőív készítés</a></li>
-
-                    <li class="listRight"><a routerLink="/log-in">Bejelntkezés</a></li>
-                    <li class="listRight"><a routerLink="/sign-up">Regisztráció</a></li> 
-                </ul>
-            </div >
-           
-        </mat-toolbar>
-
-        
-
+      <mat-toolbar>
+        <div class="hamburger-menu-wrapper" fxHide.gt-xs>
+          <button mat-icon-button (click)="onTogglesSidenav(sidenav)">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <div class="title">Kérdésbank</div>
+        <div class="navigation-wrapper">
+            <ul class="head" fcFlex fxLayout fxLayoutGap="10px" fxHide.xs>
+                <li><a routerLink="/main">Főoldal</a></li>
+                <li><a routerLink="/all-query">Összes kérdőív</a></li>
+                <li><a routerLink="/create-query">Kérdőív készítés</a></li>
+                
+                <li class="listRightl"><a routerLink="/log-in">Bejelntkezés</a></li>
+                <li class="listRights"><a routerLink="/sign-up">Regisztráció</a></li> 
+            </ul>
+        </div>
+      </mat-toolbar>
+      <router-outlet></router-outlet> 
     </mat-sidenav-content>
+  </mat-sidenav-container>
 
-</mat-sidenav-container>
-
-
+  

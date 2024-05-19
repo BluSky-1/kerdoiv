@@ -1,24 +1,24 @@
-<div class="sidemenu">
+<div class="sidemenu" [ngStyle]="{'z-index':2000}">
     <mat-nav-list>
         <a mat-list-item routerLink="/main">
-            <mat-icon>main</mat-icon>
-            <span>Főoldal</span> 
+            <mat-icon>question_mark</mat-icon>
+            <span> Főoldal</span> 
         </a>
         <a mat-list-item routerLink="/all-query">
-            <mat-icon></mat-icon>
-            <span>Összes kérdőív</span> 
+            <mat-icon>dehaze</mat-icon>
+            <span> Összes kérdőív</span> 
         </a>
         <a mat-list-item routerLink="/create-query">
-            <mat-icon>AddCircleOutline</mat-icon>
-            <span>Kérdőív készítés</span> 
+            <mat-icon>add</mat-icon>
+            <span> Kérdőív készítés</span> 
         </a>
         <a mat-list-item routerLink="/log-in">
             <mat-icon>login</mat-icon>
-            <span>Bejelntkezés</span> 
+            <span> Bejelntkezés</span> 
         </a>
        <a mat-list-item routerLink="/sign-up">
             <mat-icon>login</mat-icon>
-            <span>Regisztráció</span> 
+            <span> Regisztráció</span> 
         </a> 
     </mat-nav-list>
 </div>

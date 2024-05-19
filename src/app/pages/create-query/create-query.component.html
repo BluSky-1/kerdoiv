@@ -1,23 +1,60 @@
-<p>create-query works!</p>
+
+
+
+<h2>Készíts új kérdőívet</h2>
 
 <div class="formContainer">
     <form [formGroup]="createQuery" (ngSubmit)="onSubmit()">
-        <label for="Query">Kérdés</label>
-        <input type="text" formControlName="question">
+        <mat-form-field>
+            <mat-label for="question">Kérdés</mat-label>
+            <input matInput type="text" formControlName="question">
+        </mat-form-field>
         <br>
-        <label for="nanswers">Válaszok száma</label>
-        <input type="number" formControlName="nanswers">
-        <div >
-            <!--for nanswers  label for="answer[i]">i. válasz </label> <input type="text" formControlName="asnwer[i]"> -->
-        </div>
+        <mat-form-field>
+            <mat-label for="ans1">Válasz 1</mat-label>
+            <input matInput type="text" formControlName="ans1">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label for="ans2">Válasz 2</mat-label>
+            <input matInput type="text" formControlName="ans2">
+        </mat-form-field>
+        <br>
+         <!--
+        <mat-form-field>
+            <mat-label for="nanswers">Válaszok száma</mat-label>
+            <input id="nanswers" matInput type="number" formControlName="nanswers" min="2" max="16">
+        </mat-form-field>
+        <br>
+
+        <input type="text" id="member" name="member" value="">Number of members: (max. 10)<br />
+       
+
+        
+           --> 
+        
+           <button mat-raised-button color="accent" id="filldetails" (click)="addFields()">Új válasz</button>
+        
+        <!--
+        <div>
+            <mat-form-field>
+                <mat-label for="ans1">Válasz 1</mat-label>
+                <input matInput type="text" formControlName="ans1">
+            </mat-form-field>
+            <br>
+        </div>-->
+
 
         <br>
-        <label for="Public">Publikus</label>
-        <input type="checkbox" formControlName="public">
+            <mat-label for="public">Publikus</mat-label>
+            <mat-checkbox formControlName="public"></mat-checkbox>
+      
         <br>
-        <label for="verified">Csak igazolt felhsználók</label>
-        <input type="checkbox" formControlName="verified">
+            <mat-label for="verified">Csak igazolt felhsználók</mat-label>
+            <mat-checkbox formControlName="verified"></mat-checkbox>
         <br>
-        <button type="submit">ADD</button><br>
+        <button mat-raised-button color="accent" type="submit">Kérdőív készítése</button><br>
     </form>
 </div>
+
+

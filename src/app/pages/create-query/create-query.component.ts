@@ -11,10 +11,12 @@ export class CreateQueryComponent {
 
   createQuery = new FormGroup({
     question: new FormControl(''),
-    nanswers: new FormControl(''),
+   // nanswers: new FormControl(''),
     public: new FormControl(''),
     verified: new FormControl(''),
   })
+
+  nanswers:number = 2;
 
   constructor(private location: Location){
 
@@ -22,5 +24,11 @@ export class CreateQueryComponent {
 
   onSubmit(){
 
+  }
+
+
+  addFields(){
+    this.nanswers++;
+    console.log(this.nanswers);
   }
 }

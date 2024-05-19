@@ -1,13 +1,17 @@
-<div class="formContainer">
-    <form>
-        <label>Email: </label>
-        <input type="email" [formControl]="email">
-        <br>
-        <label>Jelszó: </label>
-        <input type="password" [formControl]="password">
-        <br>
-        <button (click)='login()'>Bejelntkezés</button>
-        <br>
-        <button [routerLink]="'/sign-up'">Regisztráció</button>
-    </form>
+
+
+<div class="main_component">
+    <span class="l-indicator"><mat-spinner *ngIf="loading"></mat-spinner></span>
+
+    <h1>Welcome to my homepage!</h1>
+    <mat-form-field>
+        <mat-label for="email">Email: </mat-label><input matInput type="text" [formControl]="email" />
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label for="password">Password: </mat-label><input matInput type="password" [formControl]="password" />
+    </mat-form-field><br>
+    <span>
+        <span><button mat-raised-button color="accent" (click)="login()">Login</button></span><br><br>
+        <span><button mat-raised-button color="accent" [routerLink]="'/signup'">Sign Up</button></span>
+    </span>
 </div>
