@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webfeljker": {
+      "hosting": {
+        "kerdoiv": [
+          "webfeljker"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webfeljker"
+  }
+}

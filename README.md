@@ -1,3 +1,5 @@
+Ez a project nem lett kész időben remélem a kód részletet is értékeled
+
 # Kerdoiv
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
