@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Query } from '../../shared/models/Query';
 
 @Component({
   selector: 'app-all-query',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './all-query.component.scss'
 })
 export class AllQueryComponent {
+
+  queryObject?: Query;
+  chosenQuery: any;
 
 }

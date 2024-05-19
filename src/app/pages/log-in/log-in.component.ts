@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../shared/servicies/auth.service';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-log-in',

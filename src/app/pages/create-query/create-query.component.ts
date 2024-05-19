@@ -12,6 +12,10 @@ export class CreateQueryComponent {
   createQuery = new FormGroup({
     question: new FormControl(''),
    // nanswers: new FormControl(''),
+    ans1: new FormControl(''),
+    ans2: new FormControl(''),
+    ans3: new FormControl(''),
+    ans4: new FormControl(''),
     public: new FormControl(''),
     verified: new FormControl(''),
   })
@@ -23,6 +27,8 @@ export class CreateQueryComponent {
   }
 
   onSubmit(){
+
+    
 
   }
 

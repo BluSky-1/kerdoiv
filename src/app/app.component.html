@@ -1,7 +1,7 @@
 
 <mat-sidenav-container class="container">
     <mat-sidenav #sidenav>
-        <app-header></app-header>
+        <app-header [loggedInUser]="loggedInUser"></app-header>
     </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar>
@@ -15,10 +15,11 @@
             <ul class="head" fcFlex fxLayout fxLayoutGap="10px" fxHide.xs>
                 <li><a routerLink="/main">Főoldal</a></li>
                 <li><a routerLink="/all-query">Összes kérdőív</a></li>
-                <li><a routerLink="/create-query">Kérdőív készítés</a></li>
+                <li *ngIf="loggedInUser"><a routerLink="/create-query">Kérdőív készítés</a></li>
                 
-                <li class="listRightl"><a routerLink="/log-in">Bejelntkezés</a></li>
-                <li class="listRights"><a routerLink="/sign-up">Regisztráció</a></li> 
+                <li *ngIf="!(loggedInUser)" class="listRightl"><a routerLink="/log-in">Bejelntkezés</a></li>
+                <li *ngIf="!(loggedInUser)" class="listRights"><a routerLink="/sign-up">Regisztráció</a></li> 
+                <li *ngIf="loggedInUser" class="listO"><a routerLink="/log-out" (click)="logout()">Kijelentkezés</a></li> 
             </ul>
         </div>
       </mat-toolbar>

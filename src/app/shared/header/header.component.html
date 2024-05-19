@@ -8,15 +8,19 @@
             <mat-icon>dehaze</mat-icon>
             <span> Összes kérdőív</span> 
         </a>
-        <a mat-list-item routerLink="/create-query">
+        <a mat-list-item routerLink="/create-query" *ngIf="loggedInUser">
             <mat-icon>add</mat-icon>
             <span> Kérdőív készítés</span> 
         </a>
-        <a mat-list-item routerLink="/log-in">
+        <a mat-list-item *ngIf="loggedInUser" (click)="logout()">
+            <mat-icon>login</mat-icon>
+            <span> Kijelentkezés</span> 
+        </a>
+        <a mat-list-item routerLink="/log-in" *ngIf="!(loggedInUser)">
             <mat-icon>login</mat-icon>
             <span> Bejelntkezés</span> 
         </a>
-       <a mat-list-item routerLink="/sign-up">
+       <a mat-list-item routerLink="/sign-up" *ngIf="!(loggedInUser)">
             <mat-icon>login</mat-icon>
             <span> Regisztráció</span> 
         </a> 

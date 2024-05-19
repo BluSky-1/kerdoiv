@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { authGuard } from './shared/services/auth.guard';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'create-query',
-    loadChildren: () => import('./pages/create-query/create-query.module').then(m => m.CreateQueryModule)
+    loadChildren: () => import('./pages/create-query/create-query.module').then(m => m.CreateQueryModule),
+    canActivate: [authGuard]
   },
   {
     path: 'not-found',

@@ -1,10 +1,24 @@
+<div class="div-card" *ngIf="queryInput">
+    <mat-card>
+        <span class="mat-card-content-wrapper">
+            <mat-card-header>
+                <mat-card-title>{{queryInput.question}}</mat-card-title>
+            </mat-card-header>
 
+            <mat-card-content>
+                
+            </mat-card-content>
+        </span>
+        <span class="mat-card-content-wrapper">
+            <mat-card-actions>
+                <form [formGroup]="answersForm" (ngSubmit)="answer()">
+                    <button formControlName="ans1">Válasz 1</button>
+                    <button formControlName="ans2">Válasz 2</button>
+                    <button formControlName="ans3">Válasz 3</button>
+                    <button formControlName="ans4">Válasz 4</button>
+                </form>
+            </mat-card-actions>
+        </span>
 
-<div class="query">
-    <h2>KÉRDÉS</h2>
-    <div>
-        <button>Válasz1</button>
-        <button>Válasz2</button>
-        <button>Válasz3</button>
-    </div>
+    </mat-card>
 </div>
